@@ -15,7 +15,7 @@ fetch('videos.txt')
                 const short = document.createElement('div');
                 short.className = 'short';
                 short.innerHTML = `
-                    <video src="${trimmedLine}" autoplay muted loop controlslist="nodownload" playsinline></video>
+                    <video src="${trimmedLine}" autoplay  loop controlslist="nodownload" playsinline></video>
                 `;
                 container.appendChild(short);
             }
