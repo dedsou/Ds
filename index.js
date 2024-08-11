@@ -8,9 +8,13 @@ const app = express();
 const PORT = 3000; // You can change this to any port you prefer
 
 // Serve the index.html file
+app.use(express.static(__dirname));
+
+// Route to serve the index.html file
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
@@ -23,7 +27,7 @@ const client = new Client(
 
 const catbox = new Catbox();
 const CHANNEL_ID = process.env['C']; // Replace with your target channel ID
-const FILE_PATH = 'videos.txt';
+const FILE_PATH = './videos.txt';
 
 // Helper function to filter and upload attachments
 async function handleAttachment(attachment) {
