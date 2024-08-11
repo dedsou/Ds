@@ -23,11 +23,11 @@ const client = new Client({
 
 const catbox = new Catbox();
 const CHANNEL_ID = 'your_channel_id'; // Replace with your target channel ID
-const FILE_PATH = './attachments.txt';
+const FILE_PATH = 'videos.txt';
 
 // Helper function to filter and upload attachments
 async function handleAttachment(attachment) {
-    const fileTypes = ['.png', '.jpg', '.jpeg', '.gif', '.mp4', '.webm'];
+    const fileTypes = ['.png', '.jpg', '.jpeg', '.mp4', '.webm'];
     const url = attachment.url;
     
     if (fileTypes.some(type => url.endsWith(type))) {
@@ -43,7 +43,7 @@ async function handleAttachment(attachment) {
 
 // Function to fetch all messages and process attachments
 async function fetchAndProcessMessages() {
-    const channel = await client.channels.fetch(CHANNEL_ID);
+    const channel = await client.channels.fetch(1271458981277073506);
     let lastMessageId;
 
     while (true) {
