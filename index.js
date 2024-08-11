@@ -22,7 +22,7 @@ const client = new Client({
 });
 
 const catbox = new Catbox();
-const CHANNEL_ID = 'your_channel_id'; // Replace with your target channel ID
+const CHANNEL_ID = '1271458981277073506'; // Replace with your target channel ID
 const FILE_PATH = 'videos.txt';
 
 // Helper function to filter and upload attachments
