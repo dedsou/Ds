@@ -16,10 +16,10 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-const client = new Client({
-    checkUpdate: false,
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
-});
+const client = new Client(
+   // checkUpdate: false,
+    //intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
+);
 
 const catbox = new Catbox();
 const CHANNEL_ID = '1271458981277073506'; // Replace with your target channel ID
