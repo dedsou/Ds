@@ -22,7 +22,7 @@ const client = new Client(
 );
 
 const catbox = new Catbox();
-const CHANNEL_ID = '1271458981277073506'; // Replace with your target channel ID
+const CHANNEL_ID = process.env['C']; // Replace with your target channel ID
 const FILE_PATH = 'videos.txt';
 
 // Helper function to filter and upload attachments
@@ -43,7 +43,7 @@ async function handleAttachment(attachment) {
 
 // Function to fetch all messages and process attachments
 async function fetchAndProcessMessages() {
-    const channel = await client.channels.fetch(1271458981277073506);
+    const channel = await client.channels.fetch(process.env['C']);
     let lastMessageId;
 
     while (true) {
@@ -67,7 +67,7 @@ async function fetchAndProcessMessages() {
 
 // Function to check for new messages every hour
 async function checkForNewMessages() {
-    const channel = await client.channels.fetch(1271458981277073506);
+    const channel = await client.channels.fetch(process.env['C']);
     const messages = await channel.messages.fetch({ limit: 100 }); // Adjust limit as needed
 
     for (const message of messages.values()) {
